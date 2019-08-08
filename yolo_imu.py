@@ -169,6 +169,8 @@ class YOLO(object):
             right = min(image.size[0], np.floor(right + 0.5).astype('int32'))
             print(label, (left, top), (right, bottom))
 
+            #calculate imu
+            
             # determine the (x, y)-coordinates of the intersection rectangle
             
             boxA = [left, bottom, right, top]
@@ -178,6 +180,8 @@ class YOLO(object):
             xB = min(boxA[2], boxB[2])
             yB = max(boxA[3], boxB[3])
 
+            
+            
             # compute the area of intersection rectangle
             interArea = max(0, xB - xA + 1) * max(0, yA - yB + 1)
 
